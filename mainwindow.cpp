@@ -62,8 +62,14 @@ void MainWindow::onLoadButtonClicked() {
         lastSavedText = contents_Q;
 
         ui->mainTextField->setText(contents_Q);
-        setWindowTitle(windowTitle + " - " + sanitizedString);
+
+        changeWindowTitle(filePath);
     }
+}
+
+void MainWindow::changeWindowTitle(const QString& filePath) {
+    QString sanitizedPath = fh.sanitizeString(filePath);
+    setWindowTitle(windowTitle + " - " + sanitizedPath);
 }
 
 void MainWindow::onSaveButtonClicked() {
@@ -73,8 +79,7 @@ void MainWindow::onSaveButtonClicked() {
     std::string textField = ui->mainTextField->toHtml().toStdString();
     fh.saveToFile(textField, filePath.toStdString());
 
-    QString sanitizedString = fh.sanitizeString(filePath);
-    setWindowTitle(windowTitle + " - " + sanitizedString);
+    changeWindowTitle(filePath);
 }
 
 void MainWindow::onSaveAsButtonClicked() {
@@ -83,8 +88,5 @@ void MainWindow::onSaveAsButtonClicked() {
     std::string textField = ui->mainTextField->toHtml().toStdString();
     fh.saveToFile(textField, filePath.toStdString());
 
-    // FIX THIS
-    QString sanitizedPath = fh.sanitizeString(filePath);
-    QString sanitizedString = " - " + sanitizedPath;
-    setWindowTitle(windowTitle + sanitizedString);
+    changeWindowTitle(filePath);
 }

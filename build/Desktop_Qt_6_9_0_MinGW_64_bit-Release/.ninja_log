@@ -1,0 +1,23 @@
+# ninja log v6
+10	113	7929734080510447	FreeNotes_en_US.qm	f792105ad347ee89
+10	113	7929734080510447	C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/FreeNotes_en_US.qm	f792105ad347ee89
+17	861	7929734087186616	FreeNotes_autogen/timestamp	db8da694973c9194
+17	861	7929734087186616	FreeNotes_autogen/mocs_compilation.cpp	db8da694973c9194
+17	861	7929734087186616	C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/FreeNotes_autogen/timestamp	db8da694973c9194
+17	861	7929734087186616	C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/FreeNotes_autogen/mocs_compilation.cpp	db8da694973c9194
+867	906	7929734088511803	.qt/rcc/qrc_FreeNotes_translations.cpp	f2f9bb252c68bc59
+867	906	7929734088511803	C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/.qt/rcc/qrc_FreeNotes_translations.cpp	f2f9bb252c68bc59
+919	1106	7929734088686478	CMakeFiles/FreeNotes.dir/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/.qt/rcc/qrc_FreeNotes_translations.cpp.obj	64450cd6131447a7
+909	2944	7929734088591609	CMakeFiles/FreeNotes.dir/main.cpp.obj	bfa267dcc1bc9fa4
+906	2949	7929734088561849	CMakeFiles/FreeNotes.dir/FreeNotes_autogen/mocs_compilation.cpp.obj	4aecfce9d53440ea
+913	3312	7929734088626332	CMakeFiles/FreeNotes.dir/mainwindow.cpp.obj	6d6565ed1b9ba308
+916	5202	7929734088656699	CMakeFiles/FreeNotes.dir/FileHandler.cpp.obj	7c02f787d96acba8
+5204	5575	7929734131543542	FreeNotes.exe	bf9d269457033228
+30	657	7929737463008637	FreeNotes_autogen/timestamp	db8da694973c9194
+30	657	7929737463008637	FreeNotes_autogen/mocs_compilation.cpp	db8da694973c9194
+30	657	7929737463008637	C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/FreeNotes_autogen/timestamp	db8da694973c9194
+30	657	7929737463008637	C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/FreeNotes_autogen/mocs_compilation.cpp	db8da694973c9194
+658	2382	7929737463828757	CMakeFiles/FreeNotes.dir/FreeNotes_autogen/mocs_compilation.cpp.obj	4aecfce9d53440ea
+661	2458	7929737463862618	CMakeFiles/FreeNotes.dir/main.cpp.obj	bfa267dcc1bc9fa4
+664	2774	7929737463893089	CMakeFiles/FreeNotes.dir/mainwindow.cpp.obj	6d6565ed1b9ba308
+2774	3120	7929737484983344	FreeNotes.exe	bf9d269457033228

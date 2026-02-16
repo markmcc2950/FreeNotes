@@ -23,6 +23,7 @@ private:
     void onSaveButtonClicked();
     void onSaveAsButtonClicked();
     void onLoadButtonClicked();
+    void changeWindowTitle(const QString& filePath);
 
     QString windowTitle = "FreeNotes";
     QString lastSavedText = "";
