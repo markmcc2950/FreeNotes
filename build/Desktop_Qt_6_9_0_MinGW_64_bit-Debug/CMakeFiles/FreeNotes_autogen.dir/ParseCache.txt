@@ -376,3 +376,5 @@ C:/Users/markm/Documents/GitHub/FreeNotes/mainwindow.h
 C:/Users/markm/Documents/GitHub/FreeNotes/main.cpp
 C:/Users/markm/Documents/GitHub/FreeNotes/mainwindow.cpp
  uic:ui_mainwindow.h
+C:/Users/markm/Documents/GitHub/FreeNotes/FileHandler.h
+C:/Users/markm/Documents/GitHub/FreeNotes/FileHandler.cpp

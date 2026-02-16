@@ -21,7 +21,12 @@ private:
     Ui::MainWindow *ui;
     void onFontButtonClicked();
     void onSaveButtonClicked();
+    void onSaveAsButtonClicked();
+    void onLoadButtonClicked();
 
+    QString windowTitle = "FreeNotes";
+    QString lastSavedText = "";
+    QString filePath = "";
     bool isBold = true;
     bool isItalic = true;
     bool isUnderline = true;

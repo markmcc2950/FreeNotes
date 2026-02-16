@@ -1,0 +1,115 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-429043380cf73ab9df6b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FreeNotes",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "FreeNotes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FreeNotes-Debug-26ecc4fc337e9de14ecd.json",
+					"name" : "FreeNotes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FreeNotes_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FreeNotes_autogen-Debug-9cc13abcf7f59e9751ca.json",
+					"name" : "FreeNotes_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FreeNotes_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FreeNotes_autogen_timestamp_deps-Debug-a3b7de1709c1a5f3cdb4.json",
+					"name" : "FreeNotes_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FreeNotes_lrelease::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FreeNotes_lrelease-Debug-436fd9b8b7314019ff31.json",
+					"name" : "FreeNotes_lrelease",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FreeNotes_lupdate::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FreeNotes_lupdate-Debug-c52b0f92de6cf8647723.json",
+					"name" : "FreeNotes_lupdate",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "release_translations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-release_translations-Debug-598d53a2667ac3fcc065.json",
+					"name" : "release_translations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "update_translations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-update_translations-Debug-4151aed7ea5da70ce12e.json",
+					"name" : "update_translations",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/markm/Documents/GitHub/FreeNotes"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

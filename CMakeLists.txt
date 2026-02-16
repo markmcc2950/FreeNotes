@@ -11,6 +11,8 @@ qt_add_executable(FreeNotes
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    FileHandler.h
+    FileHandler.cpp
 )
 
 qt_add_translations(
