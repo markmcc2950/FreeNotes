@@ -8,6 +8,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->menubar->installEventFilter(this);
+    this->setWindowFlags(Qt::WindowType::FramelessWindowHint);
+
+    //setWindowFlag(Qt::FramelessWindowHint);
+
     connect(ui->toolButtonBold, &QToolButton::clicked, this, &MainWindow::onFontButtonClicked);
     connect(ui->toolButtonItalic, &QToolButton::clicked, this, &MainWindow::onFontButtonClicked);
     connect(ui->toolButtonUnderline, &QToolButton::clicked, this, &MainWindow::onFontButtonClicked);
@@ -18,12 +23,49 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->toolButtonSave, &QToolButton::clicked, this, &MainWindow::onSaveButtonClicked);
     connect(ui->actionSaveAs, &QAction::triggered, this, &MainWindow::onSaveAsButtonClicked);
     connect(ui->actionExit, &QAction::triggered, this, &MainWindow::close);
+
+    qDebug() << "Window flags: " << this->windowFlags();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+bool MainWindow::eventFilter(QObject* obj, QEvent* event)
+{
+    if (obj == ui->menubar) {
+        if (event->type() == QEvent::MouseButtonPress) {
+            auto *me = static_cast<QMouseEvent*>(event);
+            if (me->button() == Qt::LeftButton) {
+                cur_pos = me->globalPosition().toPoint();
+                return true;
+            }
+        }
+        else if (event->type() == QEvent::MouseMove) {
+            auto *me = static_cast<QMouseEvent*>(event);
+            if (me->buttons() & Qt::LeftButton) {
+                new_pos = me->globalPosition().toPoint() - cur_pos;
+                move(x() + new_pos.x(), y() + new_pos.y());
+                cur_pos = me->globalPosition().toPoint();
+                return true;
+            }
+        }
+    }
+
+    return QMainWindow::eventFilter(obj, event);
+}
+
+void MainWindow::mousePressEvent(QMouseEvent *event) {
+    cur_pos = event->globalPosition().toPoint();
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *event) {
+    new_pos = QPoint(event->globalPosition().toPoint() - cur_pos);
+    move(x() + new_pos.x(), y() + new_pos.y());
+    cur_pos = event->globalPosition().toPoint();
+}
+
 
 void MainWindow::onFontButtonClicked() {
     QTextCursor cursor = ui->mainTextField->textCursor();

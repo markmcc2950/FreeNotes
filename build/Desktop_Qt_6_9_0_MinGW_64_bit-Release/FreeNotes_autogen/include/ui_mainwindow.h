@@ -33,11 +33,11 @@ public:
     QAction *actionSaveAs;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QToolButton *toolButtonItalic;
-    QTextEdit *mainTextField;
     QToolButton *toolButtonUnderline;
-    QToolButton *toolButtonBold;
+    QTextEdit *mainTextField;
     QToolButton *toolButtonSave;
+    QToolButton *toolButtonItalic;
+    QToolButton *toolButtonBold;
     QToolButton *toolButtonOpen;
     QMenuBar *menubar;
     QMenu *menuFile;
@@ -47,9 +47,11 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
+        MainWindow->setWindowModality(Qt::WindowModality::NonModal);
         MainWindow->resize(800, 600);
         QIcon icon(QIcon::fromTheme(QIcon::ThemeIcon::DocumentNew));
         MainWindow->setWindowIcon(icon);
+        MainWindow->setTabShape(QTabWidget::TabShape::Rounded);
         actionOpen = new QAction(MainWindow);
         actionOpen->setObjectName("actionOpen");
         actionSave = new QAction(MainWindow);
@@ -62,51 +64,52 @@ public:
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName("gridLayout");
-        toolButtonItalic = new QToolButton(centralwidget);
-        toolButtonItalic->setObjectName("toolButtonItalic");
-        QFont font;
-        font.setBold(false);
-        font.setItalic(true);
-        toolButtonItalic->setFont(font);
-        toolButtonItalic->setCheckable(true);
-
-        gridLayout->addWidget(toolButtonItalic, 0, 6, 1, 1);
-
-        mainTextField = new QTextEdit(centralwidget);
-        mainTextField->setObjectName("mainTextField");
-
-        gridLayout->addWidget(mainTextField, 2, 0, 1, 8);
-
         toolButtonUnderline = new QToolButton(centralwidget);
         toolButtonUnderline->setObjectName("toolButtonUnderline");
-        QFont font1;
-        font1.setBold(false);
-        font1.setItalic(false);
-        font1.setUnderline(true);
-        toolButtonUnderline->setFont(font1);
+        QFont font;
+        font.setBold(false);
+        font.setItalic(false);
+        font.setUnderline(true);
+        toolButtonUnderline->setFont(font);
         toolButtonUnderline->setCheckable(true);
 
         gridLayout->addWidget(toolButtonUnderline, 0, 7, 1, 1);
 
-        toolButtonBold = new QToolButton(centralwidget);
-        toolButtonBold->setObjectName("toolButtonBold");
-        QFont font2;
-        font2.setBold(true);
-        toolButtonBold->setFont(font2);
-        toolButtonBold->setCheckable(true);
+        mainTextField = new QTextEdit(centralwidget);
+        mainTextField->setObjectName("mainTextField");
+        mainTextField->viewport()->setProperty("cursor", QVariant(QCursor(Qt::CursorShape::IBeamCursor)));
 
-        gridLayout->addWidget(toolButtonBold, 0, 5, 1, 1);
+        gridLayout->addWidget(mainTextField, 2, 0, 1, 8);
 
         toolButtonSave = new QToolButton(centralwidget);
         toolButtonSave->setObjectName("toolButtonSave");
-        toolButtonSave->setFont(font2);
+        QFont font1;
+        font1.setBold(true);
+        toolButtonSave->setFont(font1);
         toolButtonSave->setCheckable(false);
 
         gridLayout->addWidget(toolButtonSave, 0, 0, 1, 1);
 
+        toolButtonItalic = new QToolButton(centralwidget);
+        toolButtonItalic->setObjectName("toolButtonItalic");
+        QFont font2;
+        font2.setBold(false);
+        font2.setItalic(true);
+        toolButtonItalic->setFont(font2);
+        toolButtonItalic->setCheckable(true);
+
+        gridLayout->addWidget(toolButtonItalic, 0, 6, 1, 1);
+
+        toolButtonBold = new QToolButton(centralwidget);
+        toolButtonBold->setObjectName("toolButtonBold");
+        toolButtonBold->setFont(font1);
+        toolButtonBold->setCheckable(true);
+
+        gridLayout->addWidget(toolButtonBold, 0, 5, 1, 1);
+
         toolButtonOpen = new QToolButton(centralwidget);
         toolButtonOpen->setObjectName("toolButtonOpen");
-        toolButtonOpen->setFont(font2);
+        toolButtonOpen->setFont(font1);
         toolButtonOpen->setCheckable(false);
 
         gridLayout->addWidget(toolButtonOpen, 0, 1, 1, 1);
@@ -137,7 +140,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "FreeNotes", nullptr));
-        actionOpen->setText(QCoreApplication::translate("MainWindow", "Open", nullptr));
+        actionOpen->setText(QCoreApplication::translate("MainWindow", "Open...", nullptr));
 #if QT_CONFIG(shortcut)
         actionOpen->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+O", nullptr));
 #endif // QT_CONFIG(shortcut)
@@ -146,23 +149,23 @@ public:
         actionSave->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+S", nullptr));
 #endif // QT_CONFIG(shortcut)
         actionExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
-        actionSaveAs->setText(QCoreApplication::translate("MainWindow", "Save As", nullptr));
+        actionSaveAs->setText(QCoreApplication::translate("MainWindow", "Save As...", nullptr));
 #if QT_CONFIG(shortcut)
         actionSaveAs->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Shift+S", nullptr));
-#endif // QT_CONFIG(shortcut)
-        toolButtonItalic->setText(QCoreApplication::translate("MainWindow", "I", nullptr));
-#if QT_CONFIG(shortcut)
-        toolButtonItalic->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+I", nullptr));
 #endif // QT_CONFIG(shortcut)
         toolButtonUnderline->setText(QCoreApplication::translate("MainWindow", "U", nullptr));
 #if QT_CONFIG(shortcut)
         toolButtonUnderline->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+U", nullptr));
 #endif // QT_CONFIG(shortcut)
+        toolButtonSave->setText(QCoreApplication::translate("MainWindow", "\360\237\222\276", nullptr));
+        toolButtonItalic->setText(QCoreApplication::translate("MainWindow", "I", nullptr));
+#if QT_CONFIG(shortcut)
+        toolButtonItalic->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+I", nullptr));
+#endif // QT_CONFIG(shortcut)
         toolButtonBold->setText(QCoreApplication::translate("MainWindow", "B", nullptr));
 #if QT_CONFIG(shortcut)
         toolButtonBold->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+B", nullptr));
 #endif // QT_CONFIG(shortcut)
-        toolButtonSave->setText(QCoreApplication::translate("MainWindow", "\360\237\222\276", nullptr));
         toolButtonOpen->setText(QCoreApplication::translate("MainWindow", "\360\237\223\201", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi

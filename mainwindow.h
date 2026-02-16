@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMouseEvent>
+#include <QPoint>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -18,13 +20,20 @@ public:
     ~MainWindow();
 
 private:
+    // Private functions
     Ui::MainWindow *ui;
+    bool eventFilter(QObject* obj, QEvent* event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
     void onFontButtonClicked();
     void onSaveButtonClicked();
     void onSaveAsButtonClicked();
     void onLoadButtonClicked();
     void changeWindowTitle(const QString& filePath);
 
+    // Private variables
+    QPoint cur_pos;
+    QPoint new_pos;
     QString windowTitle = "FreeNotes";
     QString lastSavedText = "";
     QString filePath = "";
