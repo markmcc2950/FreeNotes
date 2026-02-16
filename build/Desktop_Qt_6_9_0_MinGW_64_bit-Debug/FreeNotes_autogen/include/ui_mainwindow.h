@@ -138,9 +138,18 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "FreeNotes", nullptr));
         actionOpen->setText(QCoreApplication::translate("MainWindow", "Open", nullptr));
+#if QT_CONFIG(shortcut)
+        actionOpen->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+O", nullptr));
+#endif // QT_CONFIG(shortcut)
         actionSave->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
+#if QT_CONFIG(shortcut)
+        actionSave->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+S", nullptr));
+#endif // QT_CONFIG(shortcut)
         actionExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
         actionSaveAs->setText(QCoreApplication::translate("MainWindow", "Save As", nullptr));
+#if QT_CONFIG(shortcut)
+        actionSaveAs->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Shift+S", nullptr));
+#endif // QT_CONFIG(shortcut)
         toolButtonItalic->setText(QCoreApplication::translate("MainWindow", "I", nullptr));
 #if QT_CONFIG(shortcut)
         toolButtonItalic->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+I", nullptr));
@@ -154,13 +163,7 @@ public:
         toolButtonBold->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+B", nullptr));
 #endif // QT_CONFIG(shortcut)
         toolButtonSave->setText(QCoreApplication::translate("MainWindow", "\360\237\222\276", nullptr));
-#if QT_CONFIG(shortcut)
-        toolButtonSave->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+S", nullptr));
-#endif // QT_CONFIG(shortcut)
         toolButtonOpen->setText(QCoreApplication::translate("MainWindow", "\360\237\223\201", nullptr));
-#if QT_CONFIG(shortcut)
-        toolButtonOpen->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+O", nullptr));
-#endif // QT_CONFIG(shortcut)
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 

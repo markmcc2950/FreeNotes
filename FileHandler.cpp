@@ -73,11 +73,10 @@ std::string FileHandler::saveFileDialog() {
 
     COMDLG_FILTERSPEC filters[] = {
         { L"Text Files", L"*.txt" },
-        { L"Microsoft Word Files", L".docx"}
     };
-    pFileSave->SetFileTypes(2, filters);
+    pFileSave->SetFileTypes(1, filters);
     pFileSave->SetDefaultExtension(L"txt");
-    pFileSave->SetFileName(L"output");
+    pFileSave->SetFileName(L"document");
 
     hr = pFileSave->Show(nullptr);
     if (FAILED(hr)) {
