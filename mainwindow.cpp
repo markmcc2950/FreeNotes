@@ -8,10 +8,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->menubar->installEventFilter(this);
+    ui->menuBar->installEventFilter(this);
+    ui->menuBar->setCursor(Qt::OpenHandCursor);
     this->setWindowFlags(Qt::WindowType::FramelessWindowHint);
-
-    //setWindowFlag(Qt::FramelessWindowHint);
 
     connect(ui->toolButtonBold, &QToolButton::clicked, this, &MainWindow::onFontButtonClicked);
     connect(ui->toolButtonItalic, &QToolButton::clicked, this, &MainWindow::onFontButtonClicked);
@@ -32,40 +31,45 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-bool MainWindow::eventFilter(QObject* obj, QEvent* event)
-{
-    if (obj == ui->menubar) {
-        if (event->type() == QEvent::MouseButtonPress) {
-            auto *me = static_cast<QMouseEvent*>(event);
-            if (me->button() == Qt::LeftButton) {
-                cur_pos = me->globalPosition().toPoint();
-                return true;
+bool MainWindow::eventFilter(QObject *watched, QEvent *event) {
+    // Disable the menu file (drop down menu) when we're dragging the window around
+    ui->menuFile->menuAction()->setEnabled(!isDragging);
+
+    if (watched == ui->menuBar) {
+        if (event->type() == QEvent::MouseButtonPress)
+        {
+            QMouseEvent* mouse_event = dynamic_cast<QMouseEvent*>(event);
+            QAction* hovered = ui->menuBar->actionAt(mouse_event->pos());
+            if (hovered == ui->menuFile->menuAction()) {
+                return false;
+            }
+            this->setCursor(Qt::OpenHandCursor);
+            if (mouse_event->button() == Qt::LeftButton && hovered != ui->menuFile->menuAction()) {
+                cur_pos = mouse_event->globalPosition().toPoint();
+                return false;
             }
         }
         else if (event->type() == QEvent::MouseMove) {
-            auto *me = static_cast<QMouseEvent*>(event);
-            if (me->buttons() & Qt::LeftButton) {
-                new_pos = me->globalPosition().toPoint() - cur_pos;
+            QMouseEvent* mouse_event = dynamic_cast<QMouseEvent*>(event);
+            QAction* hovered = ui->menuBar->actionAt(mouse_event->pos());
+            if (hovered == ui->menuFile->menuAction()) {
+                return false;
+            }
+            if (mouse_event->buttons() & Qt::LeftButton && !ui->menuFile->isVisible()) {
+                this->setCursor(Qt::ClosedHandCursor);
+                isDragging = true;
+                new_pos = QPoint(mouse_event->globalPosition().toPoint() - cur_pos);
                 move(x() + new_pos.x(), y() + new_pos.y());
-                cur_pos = me->globalPosition().toPoint();
-                return true;
+                cur_pos = mouse_event->globalPosition().toPoint();
+                return false;
             }
         }
+        else if (event->type() == QEvent::MouseButtonRelease) {
+            isDragging = false;
+        }
     }
-
-    return QMainWindow::eventFilter(obj, event);
+    return false;
 }
-
-void MainWindow::mousePressEvent(QMouseEvent *event) {
-    cur_pos = event->globalPosition().toPoint();
-}
-
-void MainWindow::mouseMoveEvent(QMouseEvent *event) {
-    new_pos = QPoint(event->globalPosition().toPoint() - cur_pos);
-    move(x() + new_pos.x(), y() + new_pos.y());
-    cur_pos = event->globalPosition().toPoint();
-}
-
 
 void MainWindow::onFontButtonClicked() {
     QTextCursor cursor = ui->mainTextField->textCursor();

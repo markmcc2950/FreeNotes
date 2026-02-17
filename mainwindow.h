@@ -22,9 +22,7 @@ public:
 private:
     // Private functions
     Ui::MainWindow *ui;
-    bool eventFilter(QObject* obj, QEvent* event);
-    void mousePressEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
+    bool eventFilter(QObject *watched, QEvent *event);
     void onFontButtonClicked();
     void onSaveButtonClicked();
     void onSaveAsButtonClicked();
@@ -40,5 +38,6 @@ private:
     bool isBold = true;
     bool isItalic = true;
     bool isUnderline = true;
+    bool isDragging = false;
 };
 #endif // MAINWINDOW_H

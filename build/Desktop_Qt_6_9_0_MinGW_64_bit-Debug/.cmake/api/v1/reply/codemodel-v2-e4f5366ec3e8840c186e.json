@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-dd88b4e39848d938360f.json",
+					"jsonFile" : "directory-.-Debug-31423c4900d9751b9a52.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -52,7 +52,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "FreeNotes::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-FreeNotes-Debug-328af487540f03cf2474.json",
+					"jsonFile" : "target-FreeNotes-Debug-f445cf571ced0e3442ee.json",
 					"name" : "FreeNotes",
 					"projectIndex" : 0
 				},

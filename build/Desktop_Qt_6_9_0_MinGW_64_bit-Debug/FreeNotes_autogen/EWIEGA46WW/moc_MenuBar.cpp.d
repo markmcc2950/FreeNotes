@@ -1,8 +1,9 @@
-C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/FreeNotes_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/markm/Documents/GitHub/FreeNotes/mainwindow.h \
+C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/FreeNotes_autogen/EWIEGA46WW/moc_MenuBar.cpp: C:/Users/markm/Documents/GitHub/FreeNotes/MenuBar.h \
   C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/FreeNotes_autogen/moc_predefs.h \
+  C:/Qt/6.9.0/mingw_64/include/QtCore/QEvent \
   C:/Qt/6.9.0/mingw_64/include/QtCore/QList \
+  C:/Qt/6.9.0/mingw_64/include/QtCore/QMargins \
   C:/Qt/6.9.0/mingw_64/include/QtCore/QObject \
-  C:/Qt/6.9.0/mingw_64/include/QtCore/QPoint \
   C:/Qt/6.9.0/mingw_64/include/QtCore/QRect \
   C:/Qt/6.9.0/mingw_64/include/QtCore/QSize \
   C:/Qt/6.9.0/mingw_64/include/QtCore/QSizeF \
@@ -145,6 +146,7 @@ C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-De
   C:/Qt/6.9.0/mingw_64/include/QtCore/qyieldcpu.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/QMouseEvent \
   C:/Qt/6.9.0/mingw_64/include/QtGui/QTransform \
+  C:/Qt/6.9.0/mingw_64/include/QtGui/QWindow \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qaction.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qbrush.h \
@@ -174,18 +176,21 @@ C:/Users/markm/Documents/GitHub/FreeNotes/build/Desktop_Qt_6_9_0_MinGW_64_bit-De
   C:/Qt/6.9.0/mingw_64/include/QtGui/qrgba64.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qscreen.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qscreen_platform.h \
+  C:/Qt/6.9.0/mingw_64/include/QtGui/qsurface.h \
+  C:/Qt/6.9.0/mingw_64/include/QtGui/qsurfaceformat.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qvector2d.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qvectornd.h \
+  C:/Qt/6.9.0/mingw_64/include/QtGui/qwindow.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.9.0/mingw_64/include/QtGui/qwindowdefs_win.h \
-  C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMainWindow \
-  C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMenuBar \
+  C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmenu.h \
+  C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmenubar.h \
   C:/Qt/6.9.0/mingw_64/include/QtWidgets/qsizepolicy.h \
-  C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
